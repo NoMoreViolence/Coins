@@ -1,0 +1,19 @@
+.SearchContainer {
+  width: 40%;
+  margin-top: 14%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5%;
+}
+
+input {
+  font-size: 1em;
+  text-align:center;
+  width: 100%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+
+input:focus { 
+  outline:none; 
+}
