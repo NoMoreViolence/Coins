@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
+// 검색 바
 import Search from './components/Search/Search';
+import List from './components/List/List';
 
 const Container = styled.div`
   width: 100%;
@@ -11,11 +14,16 @@ const Container = styled.div`
 class App extends Component {
   render() {
     return (
-      <Container>
-        <Search />
-      </Container>
+      <BrowserRouter>
+        <Container>
+          <Search />
+          <Switch>
+            <Route path="/" component={List} />
+          </Switch>
+        </Container>
+      </BrowserRouter>
     );
   }
 }
-
+//           <Route path="/:coin" component={Select} />
 export default App;
