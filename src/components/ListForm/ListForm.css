@@ -1,0 +1,60 @@
+/* 핸드폰 */
+@media all and (max-width: 425px) {
+  .ListForm {
+    display: flex;
+    margin-top: 7%;
+    margin-bottom: 7%;
+  }
+  .symbol {
+    font-size: 1em;
+    width: calc(30% - 8%);
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+  .name {
+    font-size: 1em;
+    width: calc(70% - 8%);
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+}
+/* 태블릿 */
+@media all and (min-width: 426px) and (max-width: 768px) {
+  .ListForm {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .symbol {
+    font-size: 1.5em;
+    width: calc(30% - 8%);
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+  .name {
+    font-size: 1.5em;
+    width: calc(70% - 8%);
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+}
+/* 랩탑 */
+@media all and (min-width: 769px) {
+  .ListForm {
+    display: flex;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .symbol {
+    font-size: 1.5em;
+    width: calc(30% - 8%);
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+  .name {
+    font-size: 1.5em;
+    width: calc(70% - 8%);
+    margin-right: 4%;
+    margin-left: 4%;
+  }
+}
