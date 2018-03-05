@@ -13,9 +13,20 @@
   }
   .name {
     font-size: 1em;
-    width: calc(70% - 8%);
+    width: calc(50% - 8%);
     margin-right: 4%;
     margin-left: 4%;
+  }
+  .details_button {
+    font-size: 1em;
+    width: calc(20% - 4%);
+    margin-right: 2%;
+    margin-left: 2%; 
+    outline: 0;
+  }
+  .details_button:hover {
+    cursor: pointer;
+    color: burlywood;
   }
 }
 /* 태블릿 */
@@ -33,9 +44,20 @@
   }
   .name {
     font-size: 1.5em;
-    width: calc(70% - 8%);
+    width: calc(50% - 8%);
     margin-right: 4%;
     margin-left: 4%;
+  }
+  .details_button {
+    font-size: 1em;
+    width: calc(20% - 4%);
+    margin-right: 2%;
+    margin-left: 2%; 
+    outline: 0;
+  }
+  .details_button:hover {
+    cursor: pointer;
+    color: burlywood;
   }
 }
 /* 랩탑 */
@@ -53,8 +75,20 @@
   }
   .name {
     font-size: 1.5em;
-    width: calc(70% - 8%);
+    width: calc(50% - 8%);
     margin-right: 4%;
     margin-left: 4%;
+  }
+  .details_button {
+    font-size: 1em;
+    width: calc(20% - 4%);
+    margin-right: 2%;
+    margin-left: 2%; 
+    border: 0;
+    outline: 0;
+  }
+  .details_button:hover {
+    cursor: pointer;
+    color: burlywood;
   }
 }
