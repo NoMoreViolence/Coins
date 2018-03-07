@@ -6,7 +6,7 @@ import './List.css';
 class List extends Component {
   constructor(props) {
     super(props);
-    // initializes component state
+
     this.state = {
       fetching: false, // 요청이 끝났으면 false
       results: [], // 코인들의 정보가 들어가게 되는 곳
@@ -21,13 +21,13 @@ class List extends Component {
       fetching: true // requesting..
     });
 
+    // 크립토워치 API 호출
     const post = await Call.GetAll();
 
     this.setState({
-      results: post.data.result,
-      fetching: false
+      results: post.data.result, // 넘겨받은 JSON 데이터 추출 후 state에 넣음
+      fetching: false // finish
     });
-    console.log(this.state.results);
   };
 
   // 처음 로딩되었을 때 코인 정보 출력 실행
@@ -35,6 +35,7 @@ class List extends Component {
     this.Coins();
   }
 
+  // 검색 시 데이터 state에 업데이트
   handleChange(e) {
     this.setState({
       searchkey: e.target.value
@@ -48,11 +49,12 @@ class List extends Component {
       data = data.filter(info => {
         return (
           info.symbol
-            .toLowerCase()
-            .indexOf(this.state.searchkey.toLowerCase()) > -1
+            .toLowerCase() // 소문자로
+            .indexOf(this.state.searchkey.toLowerCase()) > -1 // 소문자로 검색
         );
       });
 
+      // 코인 정보 출력
       return data.map((info, i) => {
         return <ListForm symbol={info.symbol} name={info.name} key={i} />;
       });
@@ -60,7 +62,7 @@ class List extends Component {
 
     return (
       <div>
-        <div className="SearchContainer">
+        <div className="search-container">
           <input
             type="text"
             placeholder="Input Your Coin Initial"
@@ -68,7 +70,7 @@ class List extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className="List">{lists(this.state.results)}</div>
+        <div className="all-coin-list">{lists(this.state.results)}</div>
       </div>
     );
   }
