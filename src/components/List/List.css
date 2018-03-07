@@ -1,26 +1,26 @@
 /* 핸드폰 */
 @media all and (max-width: 425px) {
-  .SearchContainer {
+  .search-container {
     width: 40%;
     margin-top: 10%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 5%;
   }
-  
+
   input {
     font-size: 1em;
-    text-align:center;
+    text-align: center;
     width: 100%;
-    border:none;
-    border-bottom:1px solid #757575;
-  }
-  
-  input:focus { 
-    outline:none; 
+    border: none;
+    border-bottom: 1px solid #757575;
   }
 
-  .List {
+  input:focus {
+    outline: none;
+  }
+
+  .all-coin-list {
     width: 60%;
     height: 620px;
     overflow: auto;
@@ -31,27 +31,27 @@
 }
 /* 태블릿 */
 @media all and (min-width: 426px) and (max-width: 768px) {
-  .SearchContainer {
+  .search-container {
     width: 40%;
     margin-top: 15%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 5%;
   }
-  
+
   input {
     font-size: 1em;
-    text-align:center;
+    text-align: center;
     width: 100%;
-    border:none;
-    border-bottom:1px solid #757575;
-  }
-  
-  input:focus { 
-    outline:none; 
+    border: none;
+    border-bottom: 1px solid #757575;
   }
 
-  .List {
+  input:focus {
+    outline: none;
+  }
+
+  .all-coin-list {
     width: 60%;
     height: 720px;
     overflow: auto;
@@ -62,27 +62,27 @@
 }
 /* 랩탑 */
 @media all and (min-width: 769px) {
-  .SearchContainer {
+  .search-container {
     width: 40%;
     margin-top: 5.5%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 3.5%;
   }
-  
+
   input {
     font-size: 1em;
-    text-align:center;
+    text-align: center;
     width: 100%;
-    border:none;
-    border-bottom:1px solid #757575;
-  }
-  
-  input:focus { 
-    outline:none; 
+    border: none;
+    border-bottom: 1px solid #757575;
   }
 
-  .List {
+  input:focus {
+    outline: none;
+  }
+
+  .all-coin-list {
     width: 60%;
     height: 720px;
     overflow: auto;
