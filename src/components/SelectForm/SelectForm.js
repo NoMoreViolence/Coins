@@ -19,7 +19,7 @@ class SelectForm extends Component {
           to={this.state.url}
           style={{ textDecoration: 'none', color: '#646464' }}
         >
-          <div class="exchange-button">=></div>
+          <div className="exchange-button">=></div>
         </NavLink>
       </div>
     );
