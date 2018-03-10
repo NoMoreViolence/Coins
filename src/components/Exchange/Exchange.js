@@ -77,7 +77,14 @@ class Select extends Component {
   render() {
     const exchange = data => {
       return data.map((DATA, i) => {
-        return <ExchangeForm event={DATA.pair} price={DATA.price} key={i} />;
+        return (
+          <ExchangeForm
+            initial={this.props.match.params.CoinName}
+            event={DATA.pair}
+            price={DATA.price}
+            key={i}
+          />
+        );
       });
     };
 

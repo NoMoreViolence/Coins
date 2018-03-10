@@ -61,11 +61,11 @@
   }
   /* 거래소 별 코인 가격 정보 불러오는 전체 div */
   .exchange-view {
-    width: calc(100% - 16%);
+    width: calc(100% - 8%);
     height: 500px;
     margin-top: 3%;
-    margin-right: 8%;
-    margin-left: 8%;
+    margin-right: 4%;
+    margin-left: 4%;
     border: 1px solid black;
     overflow: auto;
   }
@@ -78,20 +78,18 @@
     margin-right: 3%;
     margin-left: 3%;
   }
-  .exchange-loader {
-    width: 100%;
-    margin-top: 5550px;
-  }
   /* 코인 교환 로고 */
   .exchange-view-info-exchange {
-    width: calc(30% - 10%);
+    width: calc(28% - 10%);
+    text-align: center;
     margin-right: 5%;
     margin-left: 5%;
   }
   /* 가격 정보 */
   .exchange-view-info-price {
-    width: calc(70% - 54%);
-    margin-right: 27%;
-    margin-left: 27%;
+    width: calc(72% - 22.5%);
+    text-align: center;
+    margin-right: 15;
+    margin-left: 7.5%;
   }
 }
