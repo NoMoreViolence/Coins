@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import styled from 'styled-components';
+// 총 리스트
+import List from './components/List/List';
 // 검색 시
 import Select from './components/Select/Select';
-// 검색 바
-import List from './components/List/List';
+// 코인 거래소 정보
+import Exchange from './components/Exchange/Exchange.js';
 
 const Container = styled.div`
   width: 100%;
@@ -18,8 +20,9 @@ class App extends Component {
       <BrowserRouter>
         <Container>
           <Switch>
+            <Route path="/:CoinName/:Market" component={Exchange} />
             <Route path="/:CoinName" component={Select} />
-            <Route path="/" component={List} />
+            <Route exact path="/" component={List} />
           </Switch>
         </Container>
       </BrowserRouter>
