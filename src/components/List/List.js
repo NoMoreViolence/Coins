@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+// 로딩
+import OverlayLoader from 'react-loading-indicator-overlay/lib/OverlayLoader';
 import * as Call from './../Call/Call';
 import ListForm from './../ListForm/ListForm';
 import './List.css';
@@ -10,7 +12,8 @@ class List extends Component {
     this.state = {
       fetching: false, // 요청이 끝났으면 false
       results: [], // 코인들의 정보가 들어가게 되는 곳
-      searchkey: '' // 검색시 글자 들어가는 곳
+      searchkey: '', // 검색시 글자 들어가는 곳
+      show: false
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -18,7 +21,8 @@ class List extends Component {
   // 전체 코인의 받는 메소드
   Coins = async coin => {
     this.setState({
-      fetching: true // requesting..
+      fetching: true, // requesting..
+      show: true
     });
 
     // 크립토워치 API 호출
@@ -26,7 +30,8 @@ class List extends Component {
 
     this.setState({
       results: post.data.result, // 넘겨받은 JSON 데이터 추출 후 state에 넣음
-      fetching: false // finish
+      fetching: false, // finish
+      show: false
     });
   };
 
@@ -70,7 +75,16 @@ class List extends Component {
             onChange={this.handleChange}
           />
         </div>
-        <div className="all-coin-list">{lists(this.state.results)}</div>
+        <OverlayLoader
+          color={'red'} // default is white
+          loader="ScaleLoader" // check below for more loaders
+          text="Loading... Please wait!"
+          active={this.state.show}
+          backgroundColor={'white'} // default is black
+          opacity="1" // default is .9
+        >
+          <div className="all-coin-list">{lists(this.state.results)}</div>
+        </OverlayLoader>
       </div>
     );
   }

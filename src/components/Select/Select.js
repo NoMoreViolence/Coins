@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+// 로딩
+import OverlayLoader from 'react-loading-indicator-overlay/lib/OverlayLoader';
 import * as Call from './../Call/Call';
 import './Select.css';
 // Form
@@ -13,22 +15,25 @@ class Select extends Component {
     this.state = {
       fetching: false, // 요청이 끝났으면 false
       results: [], // 코인의 정보가 들어가게 되는 곳
-      markets: [] // 코인의 마켓 정보가 들어가게 되는 곳
+      markets: [], // 코인의 마켓 정보가 들어가게 되는 곳
+      show: false
     };
   }
 
   // 특정 코인의 정보 받는 메소드
   Coins = async coin => {
     this.setState({
-      fetching: true // requesting..
+      fetching: true, // requesting..
+      show: true
     });
 
     // 코인의 전체 데이터
-    const post = await Call.GetCoin(this.props.match.params.CoinName);
+    const post = await Call.GetCoin(coin);
     // 그중 필요한 거래소 부분만 저장
     this.setState({
       results: post.data.result.markets.base,
-      fetching: false
+      fetching: false,
+      show: false
     });
 
     // 저장한 거래소 부분을 수정해서 중복 거래소를 없애는 부분
@@ -43,6 +48,8 @@ class Select extends Component {
         num++;
       }
     }
+    // 거래소 이름 순으로 정렬
+    markets.sort();
 
     // 마켓 state에 데이터 추가
     this.setState({
@@ -66,7 +73,7 @@ class Select extends Component {
       this.props.match.params.CoinName !== 'sgd' && // 싱가포르 달러
       this.props.match.params.CoinName !== 'zar' // 남아공 돈
     ) {
-      this.Coins();
+      this.Coins(this.props.match.params.CoinName);
     }
   }
 
@@ -94,7 +101,16 @@ class Select extends Component {
         <div className="selected-guidance">
           <p>Tradable exchange</p>
         </div>
-        <div className="selected-market">{markets(this.state.markets)}</div>
+        <OverlayLoader
+          color={'red'} // default is white
+          loader="ScaleLoader" // check below for more loaders
+          text="Loading... Please wait!"
+          active={this.state.show}
+          backgroundColor={'white'} // default is black
+          opacity="1" // default is .9
+        >
+          <div className="selected-market">{markets(this.state.markets)}</div>
+        </OverlayLoader>
       </div>
     );
   }
