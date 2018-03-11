@@ -115,13 +115,7 @@ class Select extends Component {
           backgroundColor={'white'} // default is black
           opacity="1" // default is .9
         >
-          <div className="exchange-view">
-            <div className="exchange-view-info">
-              <div className="exchange-view-info-exchange">Exchange</div>
-              <div className="exchange-view-info-price">Price</div>
-            </div>
-            {exchange(this.state.exchange)}
-          </div>
+          <div className="exchange-view">{exchange(this.state.exchange)}</div>
         </OverlayLoader>
       </div>
     );
