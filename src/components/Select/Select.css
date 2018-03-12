@@ -13,6 +13,9 @@
     width: calc(50% - 2%);
     margin-right: 1%;
     margin-left: 1%;
+    outline: none;
+    border: none;
+    background-color: white;
   }
   .selected-homelink-button:hover {
     cursor: pointer;
@@ -44,7 +47,7 @@
     font-size: 1.4em;
     overflow: auto;
     width: calc(100% - 10%);
-    height: 380px;
+    height: 360px;
     margin-right: 5%;
     margin-left: 5%;
     border: 1px solid black;
@@ -66,6 +69,9 @@
     outline: inherit;
     margin-right: 2%;
     margin-left: 2%;
+    outline: none;
+    border: none;
+    background-color: white;
   }
   .selected-homelink-button:active {
     cursor: pointer;

@@ -20,7 +20,9 @@
     width: calc(20% - 4%);
     margin-right: 2%;
     margin-left: 2%;
-    outline: 0;
+    outline: none;
+    border: none;
+    background-color: white;
   }
   .all-details-button:hover {
     cursor: pointer;
@@ -51,7 +53,9 @@
     width: calc(20% - 4%);
     margin-right: 2%;
     margin-left: 2%;
-    outline: 0;
+    outline: none;
+    border: none;
+    background-color: white;
   }
   .all-details-button:hover {
     cursor: pointer;
@@ -82,8 +86,9 @@
     width: calc(20% - 4%);
     margin-right: 2%;
     margin-left: 2%;
-    border: 0;
-    outline: 0;
+    outline: none;
+    border: none;
+    background-color: white;
   }
   .all-details-button:hover {
     cursor: pointer;
